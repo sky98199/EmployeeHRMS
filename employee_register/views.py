@@ -24,9 +24,9 @@ def employee_form(request,id=0):
             form = EmployeeForm(request.POST,instance= employee)    
         if form.is_valid():
             form.save()
-        return redirect('/employee/list')
+        return redirect('/list')
 
 def employee_delete(request,id):
     employee = Employee.objects.get(pk=id)
     employee.delete()
-    return redirect('/employee/list') 
+    return redirect('/list') 
